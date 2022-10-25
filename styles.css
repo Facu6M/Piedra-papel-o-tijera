@@ -22,11 +22,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .hijo {
-margin-top: 30px;
+margin-top: 10px;
 text-align: center;
 padding: 20px;
 }
@@ -43,12 +42,43 @@ img {
     width: 300px;
 }
 
-#texto, #text{
+.sen {
+    margin: 20px;
+    width: 200px;
+    height: 70px;
+}
+
+.tijera{
+    background-color: rgb(231, 200, 48);
+    border: none;
+    cursor: pointer;
+}
+
+.piedra{
+    background-color: rgb(128, 180, 77);
+    border: none;
+    cursor: pointer;
+}
+
+.papel{
+    background-color: rgb(176, 56, 34);
+    border: none;
+    cursor: pointer;
+}
+
+#tex{
+    font-size: 25px;
     text-align: center;
+    margin-bottom: 10px;
+}
+
+#texto, #text {
+    text-align: center;
+    font-size: 15px;
 }
 
 .textoInicial{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #send{
@@ -64,4 +94,8 @@ img {
 
 .green {
     background-color: rgb(63, 231, 63);
+}
+
+.black{
+    background-color: rgb(226, 216, 216);
 }
