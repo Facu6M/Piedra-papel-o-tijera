@@ -1,4 +1,50 @@
 const input = document.getElementById("input")
+
+const pie = document.querySelector(".piedra")
+const pap = document.querySelector(".papel")
+const tij = document.querySelector(".tijera")
+
+let sen = ""
+
+pie.addEventListener("click", pied)
+function pied () {
+    tex.innerHTML = `Elegiste piedra`
+    text.innerHTML = ""
+    papel.classList.remove("green")
+    papel.classList.remove("red")
+    piedra.classList.remove("green")
+    piedra.classList.remove("red")
+    tijera.classList.remove("green")
+    tijera.classList.remove("red")
+    sen = "piedra"
+}
+
+pap.addEventListener("click", pape)
+function pape () {
+    tex.innerHTML = `Elegiste papel`
+    text.innerHTML = ""
+    papel.classList.remove("green")
+    papel.classList.remove("red")
+    piedra.classList.remove("green")
+    piedra.classList.remove("red")
+    tijera.classList.remove("green")
+    tijera.classList.remove("red")
+    sen = "papel"
+}
+
+tij.addEventListener("click", tije)
+function tije () {
+    tex.innerHTML = `Elegiste tijera`
+    text.innerHTML = ""
+    papel.classList.remove("green")
+    papel.classList.remove("red")
+    piedra.classList.remove("green")
+    piedra.classList.remove("red")
+    tijera.classList.remove("green")
+    tijera.classList.remove("red")
+    sen = "tijera"
+}
+
 const boton = document.getElementById("send")
 const texto = document.getElementById("texto")
 const text = document.getElementById("text")
@@ -7,16 +53,21 @@ const tijera = document.getElementById("tijera")
 const papel = document.getElementById("papel")
 const piedra = document.getElementById("piedra")
 
+const tex = document.getElementById("tex")
+
 const letras = [
     "piedra",
     "papel",
     "tijera"
  ]
 
- boton.addEventListener("click", menu)
+
+
+
+boton.addEventListener("click", menu)
 
 function menu () {
-opciones = input.value.toLowerCase();
+opciones = sen;
 
 ptsPC = 0
 ptsUsuario = 0
@@ -26,7 +77,7 @@ random = letras[randomIndex]
 console.log(letras[randomIndex])
 
 operaciones();
-puntos()
+
 
 }
 
@@ -105,16 +156,6 @@ function operaciones () {
      }
 }
 
-function puntos (){
-    if (ptsPC > ptsUsuario){
-        texto.innerHTML = `Tus puntos son ${ptsUsuario} y los puntos de la pc son ${ptsPC}, por lo tanto gano la PC`
-    } else if (ptsUsuario > ptsPC) {
-        texto.innerHTML = `Tus puntos son ${ptsUsuario} y los puntos de la pc son ${ptsPC}, por lo tanto ganaste`
-    } else {
-        texto.innerHTML = "empataron, tienen los mismos puntos"
-    }
-
-}
 
 
 
