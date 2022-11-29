@@ -6,45 +6,25 @@ const tij = document.querySelector(".tijera")
 const yo = document.getElementById("yo")
 const pc = document.getElementById("pc")
 
+const bloque = document.querySelector(".textoInicial")
 
 let sen = ""
 
 pie.addEventListener("click", pied)
 function pied () {
     tex.innerHTML = `Elegiste piedra`
-    text.innerHTML = ""
-    papel.classList.remove("green")
-    papel.classList.remove("red")
-    piedra.classList.remove("green")
-    piedra.classList.remove("red")
-    tijera.classList.remove("green")
-    tijera.classList.remove("red")
     sen = "piedra"
 }
 
 pap.addEventListener("click", pape)
 function pape () {
     tex.innerHTML = `Elegiste papel`
-    text.innerHTML = ""
-    papel.classList.remove("green")
-    papel.classList.remove("red")
-    piedra.classList.remove("green")
-    piedra.classList.remove("red")
-    tijera.classList.remove("green")
-    tijera.classList.remove("red")
     sen = "papel"
 }
 
 tij.addEventListener("click", tije)
 function tije () {
     tex.innerHTML = `Elegiste tijera`
-    text.innerHTML = ""
-    papel.classList.remove("green")
-    papel.classList.remove("red")
-    piedra.classList.remove("green")
-    piedra.classList.remove("red")
-    tijera.classList.remove("green")
-    tijera.classList.remove("red")
     sen = "tijera"
 }
 
@@ -66,16 +46,16 @@ const letras = [
     "tijera"
  ]
 
+
+
  ptsPC = 0
  ptsUsuario = 0
-
 
 boton.addEventListener("click", menu)
 
 function menu () {
 
 opciones = sen;
-
 
 
 
@@ -95,25 +75,19 @@ function operaciones () {
     if (opciones == "piedra" || "tijera" || "papel" ) {
         if (opciones == "piedra" && random == "tijera") {
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
-          tijera.classList.add("green")
-          tijera.classList.remove("red")
-          piedra.classList.remove("green")
-          piedra.classList.remove("red")
-          papel.classList.remove("green")
-          papel.classList.remove("red")
-          ptsUsuario = ptsUsuario += 1
+          bloque.classList.add("green")
+          bloque.classList.remove("red")
+          bloque.classList.remove("black")
+          ptsUsuario = ptsUsuario+1
           ptsPC = ptsPC + 0
-          console.log(ptsUsuario)
+          console.log(pts)
         }
 
         else if(opciones == "tijera" && random == "papel"){
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
-            papel.classList.add("green")
-            papel.classList.remove("red")
-            piedra.classList.remove("green")
-            piedra.classList.remove("red")
-            tijera.classList.remove("green")
-            tijera.classList.remove("red")
+            bloque.classList.add("green")
+            bloque.classList.remove("red")
+            bloque.classList.remove("black")
             ptsUsuario = ptsUsuario + 1
             ptsPC = ptsPC + 0
            yo.innerText = `${ptsUsuario}`
@@ -121,12 +95,9 @@ function operaciones () {
         }
         else if(opciones == "papel" && random == "piedra"){
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
-            piedra.classList.add("green")
-            piedra.classList.remove("red")
-            tijera.classList.remove("red")
-            tijera.classList.remove("green")
-            papel.classList.remove("green")
-            papel.classList.remove("red")
+            bloque.classList.add("green")
+            bloque.classList.remove("red")
+            bloque.classList.remove("black")
             ptsUsuario = ptsUsuario + 1
             ptsPC = ptsPC + 0
            yo.innerText = `${ptsUsuario}`
@@ -135,12 +106,9 @@ function operaciones () {
 
         else if (opciones == "tijera" && random == "piedra") {
             text.innerHTML = `perdiste, porque la pc elijio ${random}`
-            piedra.classList.add("red")
-            piedra.classList.remove("green")
-            tijera.classList.remove("red")
-            tijera.classList.remove("green")
-            papel.classList.remove("green")
-            papel.classList.remove("red")
+            bloque.classList.add("red")
+            bloque.classList.remove("green")
+            bloque.classList.remove("black")
             ptsUsuario += 0
             ptsPC += 1
            yo.innerText = `${ptsUsuario}`
@@ -149,12 +117,9 @@ function operaciones () {
 
         else if(opciones == "papel" && random == "tijera"){
             text.innerHTML = `perdiste, porque la pc elijio ${random}`
-            tijera.classList.add("red")
-            tijera.classList.remove("green")
-            papel.classList.remove("green")
-            papel.classList.remove("red")
-            piedra.classList.remove("green")
-            piedra.classList.remove("red")
+            bloque.classList.add("red")
+            bloque.classList.remove("green")
+            bloque.classList.remove("black")
             ptsUsuario += 0
             ptsPC += 1
            yo.innerText = `${ptsUsuario}`
@@ -162,12 +127,9 @@ function operaciones () {
         }
         else if(opciones == "piedra" && random == "papel"){
             text.innerHTML = `perdiste, porque la pc elijio ${random}`
-            papel.classList.add("red")
-            papel.classList.remove("green")
-            piedra.classList.remove("green")
-            piedra.classList.remove("red")
-            tijera.classList.remove("green")
-            tijera.classList.remove("red")
+            bloque.classList.add("red")
+            bloque.classList.remove("green")
+            bloque.classList.remove("black")
             ptsUsuario += 0
             ptsPC += 1
            yo.innerText = `${ptsUsuario}`
@@ -175,6 +137,9 @@ function operaciones () {
         }
 
         else if(opciones == random) {
+            bloque.classList.add("black")
+            bloque.classList.remove("green")
+            bloque.classList.remove("red")
          text.innerHTML = `empataste porque la pc eligio ${random}`
           ptsUsuario += 0
             ptsPC += 0
