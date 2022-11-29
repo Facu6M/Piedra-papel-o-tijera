@@ -3,6 +3,9 @@ const input = document.getElementById("input")
 const pie = document.querySelector(".piedra")
 const pap = document.querySelector(".papel")
 const tij = document.querySelector(".tijera")
+const yo = document.getElementById("yo")
+const pc = document.getElementById("pc")
+
 
 let sen = ""
 
@@ -49,6 +52,8 @@ const boton = document.getElementById("send")
 const texto = document.getElementById("texto")
 const text = document.getElementById("text")
 
+
+
 const tijera = document.getElementById("tijera")
 const papel = document.getElementById("papel")
 const piedra = document.getElementById("piedra")
@@ -61,16 +66,18 @@ const letras = [
     "tijera"
  ]
 
-
+ ptsPC = 0
+ ptsUsuario = 0
 
 
 boton.addEventListener("click", menu)
 
 function menu () {
+
 opciones = sen;
 
-ptsPC = 0
-ptsUsuario = 0
+
+
 
 randomIndex = Math.floor(Math.random() * letras.length)
 random = letras[randomIndex]
@@ -78,11 +85,13 @@ console.log(letras[randomIndex])
 
 operaciones();
 
-
 }
 
 
 function operaciones () {
+
+
+
     if (opciones == "piedra" || "tijera" || "papel" ) {
         if (opciones == "piedra" && random == "tijera") {
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
@@ -92,8 +101,11 @@ function operaciones () {
           piedra.classList.remove("red")
           papel.classList.remove("green")
           papel.classList.remove("red")
-           ptsUsuario += 2
+          ptsUsuario = ptsUsuario += 1
+          ptsPC = ptsPC + 0
+          console.log(ptsUsuario)
         }
+
         else if(opciones == "tijera" && random == "papel"){
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
             papel.classList.add("green")
@@ -102,7 +114,10 @@ function operaciones () {
             piedra.classList.remove("red")
             tijera.classList.remove("green")
             tijera.classList.remove("red")
-         ptsUsuario += 2
+            ptsUsuario = ptsUsuario + 1
+            ptsPC = ptsPC + 0
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
         else if(opciones == "papel" && random == "piedra"){
             text.innerHTML = `ganaste, porque la pc elijio ${random}`
@@ -112,7 +127,10 @@ function operaciones () {
             tijera.classList.remove("green")
             papel.classList.remove("green")
             papel.classList.remove("red")
-         ptsUsuario += 2
+            ptsUsuario = ptsUsuario + 1
+            ptsPC = ptsPC + 0
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
 
         else if (opciones == "tijera" && random == "piedra") {
@@ -123,8 +141,12 @@ function operaciones () {
             tijera.classList.remove("green")
             papel.classList.remove("green")
             papel.classList.remove("red")
-         ptsPC += 2
+            ptsUsuario += 0
+            ptsPC += 1
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
+
         else if(opciones == "papel" && random == "tijera"){
             text.innerHTML = `perdiste, porque la pc elijio ${random}`
             tijera.classList.add("red")
@@ -133,7 +155,10 @@ function operaciones () {
             papel.classList.remove("red")
             piedra.classList.remove("green")
             piedra.classList.remove("red")
-         ptsPC += 2
+            ptsUsuario += 0
+            ptsPC += 1
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
         else if(opciones == "piedra" && random == "papel"){
             text.innerHTML = `perdiste, porque la pc elijio ${random}`
@@ -143,19 +168,27 @@ function operaciones () {
             piedra.classList.remove("red")
             tijera.classList.remove("green")
             tijera.classList.remove("red")
-         ptsPC += 2
+            ptsUsuario += 0
+            ptsPC += 1
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
+
         else if(opciones == random) {
          text.innerHTML = `empataste porque la pc eligio ${random}`
-         ptsUsuario += 1
-         ptsPC += 1
+          ptsUsuario += 0
+            ptsPC += 0
+           yo.innerText = `${ptsUsuario}`
+           pc.innerText = `${ptsPC}`
         }
      }
      else{
          alert("la opcion es incorrecta")
      }
-}
 
+
+
+ }
 
 
 
