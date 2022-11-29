@@ -43,6 +43,7 @@ img {
     border-radius: 50%;
     height: 200px;
     width: 200px;
+    border: 0px solid;
 }
 
 .textoInicial{
@@ -83,9 +84,10 @@ img {
 
 
 #send {
+
     cursor: pointer;
     border: 0px solid;
-    background-color: rgb(194, 194, 194);
+    background-color: rgb(37, 104, 119);
 }
 
 #tex{
@@ -101,7 +103,7 @@ img {
 
 .textoInicial{
     border: 2px solid ;
-    margin-top: 20px;
+    margin-top: 45px;
 }
 
 #send{
