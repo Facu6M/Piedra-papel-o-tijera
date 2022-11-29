@@ -11,18 +11,21 @@ const bloque = document.querySelector(".textoInicial")
 let sen = ""
 
 pie.addEventListener("click", pied)
+pie.addEventListener("click", menu)
 function pied () {
     tex.innerHTML = `Elegiste piedra`
     sen = "piedra"
 }
 
 pap.addEventListener("click", pape)
+pap.addEventListener("click", menu)
 function pape () {
     tex.innerHTML = `Elegiste papel`
     sen = "papel"
 }
 
 tij.addEventListener("click", tije)
+tij.addEventListener("click", menu)
 function tije () {
     tex.innerHTML = `Elegiste tijera`
     sen = "tijera"
@@ -51,7 +54,7 @@ const letras = [
  ptsPC = 0
  ptsUsuario = 0
 
-boton.addEventListener("click", menu)
+
 
 function menu () {
 
