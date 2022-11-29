@@ -1,145 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-body{
-   background-image: linear-gradient(180deg, #3d5682 0, #2e4c7a 50%, #1c4272 100%);;
-}
-
-/* HEADER */
-
-#contenedor {
-    padding-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hijo {
-margin-top: 10px;
-text-align: center;
-padding: 20px;
-}
-
-input {
- height: 50px;
- width: 325px;
- outline: none;
- text-align: center;
-}
-
-img {
-    cursor:pointer;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-}
-
-.textoInicial{
-    margin: 20px auto;
-    width: 250px;
-    height: 270px;
-   border-radius: 30px ;
-   text-align: center;
-    border: 1px solid black;
-    padding: -20px ;
-}
-
-.sen {
-    margin: 20px;
-    width: 200px;
-    height: 70px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/jpg" href="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/people-playing-paper-rock-scissors-royalty-free-illustration-1583269312.jpg?crop=0.936xw:1.00xh;0.0337xw,0&resize=640:*">
+    <link rel="stylesheet" href="styles.css">
+    <title>Piedra papel o tijera</title>
+</head>
+<body>
 
 
 
-.tijera{
-    background-color: rgb(231, 200, 48);
-    border: none;
-    cursor: pointer;
-}
+<div id="contenedor">
+    <div id="piedra" class="hijo ">
+        <img class="piedra" src="https://cdn.domestika.org/c_fit,dpr_1.0,f_auto,t_base_params,w_820/v1599129971/content-items/005/676/799/piedra-original.png?1599129971">
+    </div>
+    <div id="papel" class="hijo ">
+        <img class="papel" src="https://cdn.domestika.org/c_fit,dpr_1.0,f_auto,t_base_params,w_820/v1599129919/content-items/005/676/774/papel-original.png?1599129919">
+    </div>
+    <div id="tijera" class="hijo">
+        <img class="tijera" src="https://cdn.domestika.org/c_fit,dpr_1.0,f_auto,t_base_params,w_820/v1599129946/content-items/005/676/784/tijera-original.png?1599129946">
+    </div>
+</div>
 
-.piedra{
-    background-color: rgb(128, 180, 77);
-    border: none;
-    cursor: pointer;
-}
+<div id="container">
+    <button id="send">Jugar</button>
+   </div>
 
-.papel{
-    background-color: rgb(176, 56, 34);
-    border: none;
-    cursor: pointer;
-}
+   <div class="textoInicial">
+    <h3 id="tex"></h3>
+    <h3 id="text"></h3>
 
+    <div id="puntos">
+    <div id="h4">
+    <p>Puntos</p>
+    <p>Puntos de la PC</p>
+    </div>
+     <div class="puntaje" id="h3">
+        <h6 id="yo"></h6>
+    <h6 id="pc" ></h6>
+     </div>
+</div>
 
-#send {
-    cursor: pointer;
-    border: 0px solid;
-    background-color: rgb(194, 194, 194);
-}
+    </div>
 
-#tex{
-    font-size: 25px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
+<div class="textoFinal">
+<h3 id="texto"></h3>
+</div>
 
-#texto, #text {
-    text-align: center;
-    font-size: 15px;
-}
-
-.textoInicial{
-    border: 2px solid ;
-    margin-top: 20px;
-}
-
-#send{
-    width: 60px;
-    height: 30px;
-    margin-left: 20px ;
-}
-
-#h4{
-  display: flex;
-  justify-content: space-around;
-}
-
-#h3{
-    padding-right: 70px;
-    padding-top: 10px;
-   font-size: 24px;
-    display: flex;
-    justify-content: space-around;
-}
-
-
-#h4,#h3{
-    padding-top: 40px;
-}
-
-
-/*
-.red {
-    background-color: red;
-}
-
-.green {
-    background-color: rgb(63, 231, 63);
-}
-
-.black{
-    background-color: rgb(226, 216, 216);
-}
-
-*/
+<script src="app.js"></script>
+</body>
+</html>
