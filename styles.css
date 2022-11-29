@@ -145,3 +145,10 @@ img {
     background-color: rgb(67, 63, 63);
 }
 
+@media (max-width: 550px) {
+   img{
+    height: 100px;
+    width: 100px;
+   }
+  }
+
